@@ -427,11 +427,11 @@ document.getElementById('setupSaveBtn').addEventListener('click',()=>{
   catch(e){setupErr.classList.add('show')}
 });
 
-const saved=getSaved();
-if(saved){setupScreen.classList.add('hidden');boot(saved)}
-
 /* ── BOOT ── */
 let db,tasksRef,tasks=[],editingId=null,currentView='board',calYear,calMonth,listSort={key:'dueDate',dir:'asc'},draggedId=null,listenersInit=false;
+
+const saved=getSaved();
+if(saved){setupScreen.classList.add('hidden');boot(saved)}
 
 function boot(config){
   setupScreen.classList.add('hidden');appWrap.classList.add('active');
